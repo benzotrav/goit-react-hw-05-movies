@@ -12,7 +12,7 @@ import { MoviesLabel,
     MoviesImg
 } from './Movies-styled';
 
-const MoviesPage = () => {
+const Movies = () => {
 const location = useLocation();
 const [searchFilter, setSearchFilter] = useSearchParams();
 const [filmList, setFilmList] = useState(null);
@@ -73,4 +73,4 @@ useEffect(() => {
 };
 
 
-export default MoviesPage;
+export default Movies;
