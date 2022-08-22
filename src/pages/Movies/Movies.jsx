@@ -12,12 +12,13 @@ import { MoviesLabel,
     MoviesImg
 } from './Movies-styled';
 
-const Movies = () => {
-const location = useLocation();
-const [searchFilter, setSearchFilter] = useSearchParams();
-const [filmList, setFilmList] = useState(null);
 
-useEffect(() => {
+const Movies = () => {
+  const [filmList, setFilmList] = useState(null);
+  const [searchFilter, setSearchFilter] = useSearchParams();
+  const location = useLocation();
+
+  useEffect(() => {
     const filmName = searchFilter.get('filter');
     if (!filmName) {
       return;
@@ -33,29 +34,33 @@ useEffect(() => {
     );
   };
 
-    return (
-        <>
-        <form onSumbit={submitForm}>
+  const defaultImg =
+  'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg';
+
+  return (
+    <>
+      <form onSubmit={submitForm}>
         <MoviesLabel>
-            Find Movie
-        <MoviesInput type="text" name="searchFilm" placeholder="Type your input" />
-        <MoviesBtn type="submit">
+          Find movie
+          <MoviesInput type="text" name="searchFilm" placeholder="Write film name" />
+          <MoviesBtn type="submit">
             Submit
-        </MoviesBtn>
+          </MoviesBtn>
         </MoviesLabel>
-        </form>
-        {filmList && (
-            <MoviesList>
-            {filmList.map(({ id, title, backdrop_path }) => (
+      </form>
+      {filmList && (
+        <MoviesList>
+          {filmList.map(({ id, title, backdrop_path }) => (
             <MoviesItem key={id}>
               <ImageLink to={`${id}`} state={{ from: location }}>
                 <ImgBox>
                   <MoviesImg
-                  src={
-                    backdrop_path
-                       `https://image.tmdb.org/t/p/w400${backdrop_path}`
-                  }
-                  alt={title}
+                    src={
+                      backdrop_path
+                        ? `https://image.tmdb.org/t/p/w400${backdrop_path}`
+                        : defaultImg
+                    }
+                    alt={title}
                   />
                 </ImgBox>
               </ImageLink>
@@ -64,13 +69,10 @@ useEffect(() => {
               </TitleLink>
             </MoviesItem>
           ))}
-
-            </MoviesList>
-        )
-        }
-        </>
-    );
+        </MoviesList>
+      )}
+    </>
+  );
 };
-
 
 export default Movies;
