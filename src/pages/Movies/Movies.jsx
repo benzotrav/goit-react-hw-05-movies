@@ -34,8 +34,7 @@ const Movies = () => {
     );
   };
 
-  const defaultImg =
-  'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg';
+
 
   return (
     <>
@@ -58,7 +57,7 @@ const Movies = () => {
                     src={
                       backdrop_path
                         ? `https://image.tmdb.org/t/p/w400${backdrop_path}`
-                        : defaultImg
+                        : `https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg`
                     }
                     alt={title}
                   />

@@ -33,7 +33,8 @@ const Home = () => {
                 <HomeImage
                 src={
                     backdrop_path
-                      `https://image.tmdb.org/t/p/w400${backdrop_path}`
+                      ? `https://image.tmdb.org/t/p/w400${backdrop_path}`
+                      : `https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg`
                     }
                   alt={title}
                 />
