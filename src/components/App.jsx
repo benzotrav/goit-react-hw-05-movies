@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./Layout/Layout";
+import Details from "./Details/Details";
 import { lazy } from "react";
 
 const Home = lazy(() => import('../pages/Home/Home'));
@@ -14,6 +15,9 @@ export const App = () => {
     <Route path="/" element={<Layout />}>
       <Route path="home" element={<Home/>} />
       <Route path="movies" element={<Movies />} />
+      <Route path="movies/:movieId" element={<Details />}>
+
+        </Route>
     </Route>
     <Route path="*" element={<Navigate to="/" />}></Route>
   </Routes>
