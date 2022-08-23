@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { 
+    HomeTitle,
     HomeList, 
     HomeLink, 
     HomeThumb, 
@@ -25,27 +26,28 @@ const Home = () => {
             
     return (
         <>
-        <HomeList>
+         <HomeTitle>Tranding today</HomeTitle>
+      <HomeList>
         {popularMovies.map(({ title, id, backdrop_path }) => (
-        <HomeItem key={id}>
-        <HomeLink to={`/movies/${id}`} state={{ from: location }}>
-            <HomeThumb>
+          <HomeItem key={id}>
+            <HomeLink to={`/movies/${id}`} state={{ from: location }}>
+              <HomeThumb>
                 <HomeImage
-                src={
+                  src={
                     backdrop_path
                       ? `https://image.tmdb.org/t/p/w400${backdrop_path}`
                       : `https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg`
-                    }
+                  }
                   alt={title}
                 />
-            </HomeThumb>            
-        </HomeLink>        
-        <TitleLink to={`/movies/${id}`} state={{ from: location }}>
-            {title}
-            </TitleLink>        
-        </HomeItem>
-        ))};
-        </HomeList>
+              </HomeThumb>
+            </HomeLink>
+            <TitleLink to={`/movies/${id}`} state={{ from: location }}>
+              {title}
+            </TitleLink>
+          </HomeItem>
+        ))}
+      </HomeList>
         </>
     );
 };
