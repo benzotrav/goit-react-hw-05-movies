@@ -26,7 +26,7 @@ const Home = () => {
             
     return (
         <>
-         <HomeTitle>Tranding today</HomeTitle>
+         <HomeTitle>Popular</HomeTitle>
       <HomeList>
         {popularMovies.map(({ title, id, backdrop_path }) => (
           <HomeItem key={id}>

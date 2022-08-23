@@ -3,7 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 
 export const HomeTitle = styled.h2`
-    margin-left: 40px;
+    padding-left: 40px;
+    color: white;
+    background-color: #00ccff;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
 `;
 
 export const HomeList = styled.ul`

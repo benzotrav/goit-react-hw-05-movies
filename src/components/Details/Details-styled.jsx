@@ -39,6 +39,6 @@ export const NavItem = styled.li`
 
 
 export const DetailsAppBox = styled.div`
-        background-color: #00ccff;
-
+    background-color: #00ccff;
+    padding-bottom: 10px;
 `;
