@@ -14,9 +14,6 @@ import { DetailsLink,
 import { IoIosArrowBack } from 'react-icons/io';
 
 
-
-
-
 const Details = () => {
 
     const { movieId } = useParams();

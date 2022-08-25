@@ -13,6 +13,14 @@ export const NavigationLink = styled(NavLink)`
       font-size: 30px;
       text-decoration: none;
       color: white;
+      &.active {
+    background-color: black;
+  }
+  :hover:not(.active),
+  :focus-visible:not(.active) {
+   color: black;
+  }
+
 `
 
 
